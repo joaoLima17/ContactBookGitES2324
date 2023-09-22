@@ -97,6 +97,22 @@ public class ContactBook {
         contacts = tmp;
     }
 
+    public boolean hasEqualNumber() {
+        Contact user1 = null;
+        Contact user2 = null;
+        boolean result = false;
+
+        for(int i = 0; i < contacts.length; i++){
+            user1 = contacts[i];
+            for (int j = counter - 1; j > i; j--) {
+                user2 = contacts[j];
+                if (user1.getPhone() == user2.getPhone())
+                    result = true;
+            }
+        }
+        return result;
+    }
+
     public void initializeIterator() {
         currentContact = 0;
     }
